@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.2.3",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "bootstrap-datepicker": "^1.8.0",
     "debounce": "^1.2.0",
     "fast-deep-equal": "^2.0.1",
