@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Employee{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('employee_search') }}
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Employee index</h1>
+        <p class="lead font-italic">You can find your employees here.</p>
+    </div>
+
+    <div id="employee-table" data-init="{{employeeTableConfig|json_encode}}"></div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('employee_search') }}
+{% endblock javascripts %}
+
+

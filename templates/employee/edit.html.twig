@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'employee/form/fields.html.twig' %}
+
+{% block title %}Edit Employee{% endblock %}
+
+{% block body %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Edit Employee</h1>
+        <p class="lead font-italic">You can edit your employee records here.</p>
+    </div>
+    <div class="container pb-3">
+        {% if app.request.method == 'POST' %}
+            {% if form.vars.valid %}
+                <p class="alert alert-info">Changes were saved successfully.</p>
+            {% else %}
+                <p class="alert alert-danger">This form is not valid. Please look up any errors and fix them before trying to save the form again.</p>
+            {% endif %}
+        {% endif %}
+        {{ include('employee/form/form.html.twig', {'button_label': 'Save changes'}) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {# assets/js/pages/employee/form.js #}
+    {{ encore_entry_script_tags('employee_form') }}
+{% endblock %}

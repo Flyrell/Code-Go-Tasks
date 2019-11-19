@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment index{% endblock %}
+
+{% block body %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Payment index</h1>
+        <p class="lead font-italic">You can find your employee payments here.</p>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Month</th>
+                    <th>Amount</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.employeeFullName }}</td>
+                    <td>{{ result.payment.month ? result.payment.month|date('Y-m') : '' }}</td>
+                    <td>{{ result.payment.amount|number_format(2, '.', ',') }} CZK</td>
+                    <td>
+                        <a href="{{ path('payment_view', {'id': result.payment.id}) }}">
+                            <i class="fas fa-book-open list-icon" title="View"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" class="text-center">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

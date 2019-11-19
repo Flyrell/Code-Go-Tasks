@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employee index{% endblock %}
+
+{% block body %}
+
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Employee index</h1>
+        <p class="lead font-italic">You can find your employees here.</p>
+    </div>
+
+    <div class="container mb-5">
+        <div class="clearfix">
+            <a href="{{ path('employee_new') }}" class="btn btn-primary float-right" role="button">Create new</a>
+        </div>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Birthday</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.firstName }}</td>
+                    <td>{{ employee.lastName }}</td>
+                    <td>{{ employee.birthday ? employee.birthday|date('Y-m-d') : '' }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.phone }}</td>
+                    <td>
+                        <a href="{{ path('employee_edit', {'id': employee.id}) }}"><i class="fas fa-edit list-icon" title="Edit"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="clearfix">
+            <a href="{{ path('employee_new') }}" class="btn btn-primary float-right" role="button">Create new</a>
+        </div>
+    </div>
+{% endblock %}

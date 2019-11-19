@@ -1,0 +1,15 @@
+old_sound_rabbit_mq:
+    connections:
+        default:
+            url: '%env(RABBITMQ_URL)%'
+    producers:
+        # use 'old_sound_rabbit_mq.task_producer' service to send data.
+        skill_stats_recalculation:
+            connection:       default
+            exchange_options: { name: 'skill_stats_recalculation', type: direct }
+    consumers:
+        skill_stats_recalculation:
+            connection:        default
+            exchange_options:  { name: 'skill_stats_recalculation', type: direct }
+            queue_options:     { name: 'skill_stats_recalculation'}
+            callback:          App\Consumer\SkillStatsRecalculationConsumer

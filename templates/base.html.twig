@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        {% include 'include/top-bar.html.twig' %}
+        {% block body %}{% endblock %}
+        {{ encore_entry_script_tags('app') }}
+        {% block javascripts %}
+        {% endblock %}
+    </body>
+</html>

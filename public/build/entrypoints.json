@@ -1,0 +1,28 @@
+{
+  "entrypoints": {
+    "app": {
+      "js": [
+        "/build/runtime.6cf710cd.js",
+        "/build/app.0c00239a.js"
+      ],
+      "css": [
+        "/build/app.0ad9c512.css"
+      ]
+    },
+    "employee_search": {
+      "js": [
+        "/build/runtime.6cf710cd.js",
+        "/build/employee_search.dbdc338e.js"
+      ],
+      "css": [
+        "/build/employee_search.45498d76.css"
+      ]
+    },
+    "employee_form": {
+      "js": [
+        "/build/runtime.6cf710cd.js",
+        "/build/employee_form.676c54a4.js"
+      ]
+    }
+  }
+}

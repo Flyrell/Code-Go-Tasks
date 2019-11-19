@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    fs.elastic.repositories:
+        class: App\DependencyInjection\ServiceLocator
+        tags: ['container.service_locator']
+        arguments:
+            -
+                employee: '@App\Repository\Elastic\EmployeeElasticRepository'
+
+    Elasticsearch\Client:
+        factory: 'Elasticsearch\ClientBuilder::fromConfig'
+        arguments:
+            -
+                hosts: '%env(array:ELASTIC_HOST)%'

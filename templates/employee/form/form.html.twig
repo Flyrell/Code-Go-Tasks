@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+{{ form_end(form) }}
+<div class="clearfix">
+    <button id="save-employee" class="btn btn-primary float-right">{{ button_label|default('Save') }}</button>
+    <a href="{{ path('employee_index') }}" class="btn btn-primary float-right mr-2" role="button">Back to list</a>
+    {% if employee.id %}
+        <div class="float-right mr-2">
+            {{ include('employee/form/delete_form.html.twig') }}
+        </div>
+    {% endif %}
+</div>
+

@@ -1,0 +1,97 @@
+{% block _employee_addresses_row %}
+    <div class="card p-3 mt-2 mb-2 collection-wrapper">
+        <div class="clearfix">
+            <span class="h3 float-left">Addresses</span>
+            <button id="add-address" type="button" class="btn btn-primary float-right" data-list="#{{ form.vars.id }}">Add address</button>
+        </div>
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+        {{ form_help(form) }}
+    </div>
+{% endblock %}
+
+{% block _employee_addresses_entry_row %}
+    <div class="card p-3 mt-2 mb-2 collection-item">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+        {{ form_help(form) }}
+        <div class="clearfix">
+            <button type="button" class="btn btn-danger float-right delete-collection-item">Delete address</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block _employee_payments_row %}
+    <div class="card p-3 mt-2 mb-2 collection-wrapper">
+        <div class="clearfix">
+            <span class="h3 float-left">Payments</span>
+            <button id="add-payment" type="button" class="btn btn-primary float-right" data-list="#{{ form.vars.id }}">Add payment</button>
+        </div>
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+        {{ form_help(form) }}
+    </div>
+{% endblock %}
+
+{% block _employee_payments_entry_row %}
+    <div class="card px-3 my-2 collection-item">
+        <div class="row align-items-end my-1">
+            <div class="col-sm-6 col-12 my-1">
+                {{ form_label(form.month) }}
+                {{ form_widget(form.month) }}
+                {{ form_help(form.month) }}
+            </div>
+            <div class="col-sm-6 col-12 my-1">
+                {{ form_label(form.amount) }}
+                {{ form_widget(form.amount) }}
+                {{ form_help(form.amount) }}
+            </div>
+            <div class="col-sm-4 col-12 my-1">
+                {{ form_label(form.primarySkill.name) }}
+                {{ form_widget(form.primarySkill.name) }}
+                {{ form_help(form.primarySkill.name) }}
+            </div>
+            <div class="col-sm-4 col-12 my-1">
+                {{ form_label(form.primarySkill.level) }}
+                {{ form_widget(form.primarySkill.level) }}
+                {{ form_help(form.primarySkill.level) }}
+            </div>
+            <div class="col-sm-4 col-12 my-1">
+                <button type="button" class="btn btn-danger delete-collection-item float-right">Delete payment</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block _employee_skills_row %}
+    <div class="card p-3 mt-2 mb-2 collection-wrapper">
+        <div class="clearfix">
+            <span class="h3 float-left">Skills</span>
+            <button id="add-skill" type="button" class="btn btn-primary float-right" data-list="#{{ form.vars.id }}">Add skills</button>
+        </div>
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+        {{ form_help(form) }}
+    </div>
+{% endblock %}
+
+{% block _employee_skills_entry_row %}
+    <div class="card px-3 my-2 collection-item">
+        <div class="row align-items-end my-1">
+            <div class="col-sm-4 col-md-5 col-12 my-1">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+                {{ form_help(form.name) }}
+            </div>
+            <div class="col-sm-4 col-md-5 col-12 my-1">
+                {{ form_label(form.level) }}
+                {{ form_widget(form.level) }}
+                {{ form_help(form.level) }}
+            </div>
+            <div class="col-sm-4 col-md-2 col-12 my-1">
+                <button type="button" class="btn btn-danger delete-collection-item float-right">Delete skill</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

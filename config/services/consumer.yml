@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Consumer\SkillStatsRecalculationConsumer:
+        arguments:
+            $logger: '@monolog.logger.consumer_skill_stats_recalculations'

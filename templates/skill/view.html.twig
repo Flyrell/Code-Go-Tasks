@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skill{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h2>Skill: {{ skill.name }}</h2>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ skill.name }}</td>
+                </tr>
+                <tr>
+                    <th>Level</th>
+                    <td>
+                        {% for i in range(1, skill.level) %}
+                            <i class="fas fa-star yellow-star"></i>
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Minimum salary</th>
+                    <td>{{ skill.minSalary }}</td>
+                </tr>
+                <tr>
+                    <th>Maximum salary</th>
+                    <td>{{ skill.maxSalary }}</td>
+                </tr>
+                <tr>
+                    <th>Average salary</th>
+                    <td>{{ skill.avgSalary }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form method="post" name="delete_skill" action="{{ path('skill_delete', {'id': skill.id}) }}" onsubmit="return confirm('Are you sure you want to delete skill &quot;{{ skill.name }}&quot;?');">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ skill.id) }}">
+            <div class="clearfix">
+                <button class="btn">Delete</button>
+                <a href="{{ path('skill_index') }}" class="btn btn-primary float-right" role="button">back to list</a>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock %}

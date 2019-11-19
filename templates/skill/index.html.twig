@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Skill index{% endblock %}
+
+{% block body %}
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Skill index</h1>
+        <p class="lead font-italic">You can find your skills here.</p>
+    </div>
+
+    <div class="container pb-3">
+        <div class="clearfix">
+            <a href="{{ path('skill_new') }}" class="btn btn-primary float-right" role="button">Create new</a>
+        </div>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Min Salary</th>
+                    <th>Max Salary</th>
+                    <th>Avg Salary</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for skill in skills %}
+                <tr>
+                    <td>{{ skill.name }}</td>
+                    <td>
+                        {% for i in range(1, skill.level) %}
+                            <i class="fas fa-star yellow-star"></i>
+                        {% endfor %}
+                    </td>
+                    <td>{{ skill.minSalary|number_format }} CZK</td>
+                    <td>{{ skill.maxSalary|number_format }} CZK</td>
+                    <td>{{ skill.avgSalary|number_format }} CZK</td>
+                    <td>
+                        <a href="{{ path('skill_view', {'id': skill.id}) }}" class="delete-skill"><i class="fas fa-book-open list-icon" title="View"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6" class="text-center">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="clearfix">
+            <a href="{{ path('skill_new') }}" class="btn btn-primary float-right" role="button">Create new</a>
+        </div>
+    </div>
+{% endblock %}

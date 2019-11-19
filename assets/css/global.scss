@@ -1,0 +1,32 @@
+// customize some Bootstrap variables
+$primary: darken(#428bca, 20%);
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+.yellow-star {
+  color: #ffca08;
+}
+
+.list-icon {
+  font-size: 1.3em;
+  margin: 0 2px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.collection-item {
+  padding-left: 20px;
+}
+
+.collection-wrapper {
+  background-color: whitesmoke;
+}
+
+.align-content-bottom {
+  float: none;
+  display: table-cell;
+  vertical-align: bottom;
+}

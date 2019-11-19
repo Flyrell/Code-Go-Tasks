@@ -1,0 +1,44 @@
+{
+  "name": "simple-personnel-management-application",
+  "devDependencies": {
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^5.6.1",
+    "@symfony/webpack-encore": "^0.22.0",
+    "bootstrap": "^4.1.3",
+    "eslint": "^4.9.0",
+    "eslint-config-synacor": "^2.0.2",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.0",
+    "popper.js": "^1.14.6",
+    "sass-loader": "^7.0.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "license": "proprietary",
+  "private": true,
+  "scripts": {
+    "dev": "encore dev --devtool source-map",
+    "watch": "encore dev --devtool source-map --watch",
+    "build": "encore production --progress",
+    "lint": "eslint assets/js/react",
+    "fix": "eslint --fix assets/js/react"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "axios": "^0.18.0",
+    "bootstrap-datepicker": "^1.8.0",
+    "debounce": "^1.2.0",
+    "fast-deep-equal": "^2.0.1",
+    "history": "^4.7.2",
+    "immer": "^1.9.2",
+    "query-string": "^6.2.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-select": "^2.2.0",
+    "react-table": "^6.8.6",
+    "select2": "^4.0.6-rc.1"
+  },
+  "eslintIgnore": [
+    "public/build/*"
+  ]
+}

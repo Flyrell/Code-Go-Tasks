@@ -1,0 +1,7 @@
+Copyright (C) 2018 Techpike s.r.o.
+All Rights Reserved.
+
+Notice: This software could contain third party software
+which is subject to different License terms and conditions.
+Therefore, License terms and conditions of third party software,
+are stated in respective areas of this source code package.

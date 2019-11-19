@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Command\ElasticIndexCommand:
+        arguments:
+            $repositories: '@fs.elastic.repositories'
